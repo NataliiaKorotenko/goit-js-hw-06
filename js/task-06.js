@@ -1,6 +1,6 @@
 const inputText = document.querySelector('#validation-input');
 
-input.addEventListener('blur', () => {
+inputText.addEventListener('blur', () => {
   const inputLength = inputText.value.length;
   const quantityLength = parseInt(inputText.dataset.length);
 
