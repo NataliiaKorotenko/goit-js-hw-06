@@ -1,4 +1,4 @@
-const input = document.getElementById('validation-input');
+const input = document.getElementById('#validation-input');
 
 input.addEventListener ('blur', () => {
     const inputLength = input.value.length;
@@ -8,7 +8,7 @@ input.addEventListener ('blur', () => {
         input.classList.remove('invalid');
         input.classList.add('valid');
       } else {
-        input.classList.remove('invalid');
-        input.classList.add('valid');
+        input.classList.remove('valid');
+        input.classList.add('invalid');
     }
     });
