@@ -14,12 +14,15 @@ btnDestroy.addEventListener('click', destroyBoxes);
 
 const createBoxes = (amount) => {
   for (let i = 0; i < amount; i++) {
-    const { style } = boxesContainer.appendChild(document.createElement('div'));
-    style.backgroundColor = getRandomHexColor();
-    style.width = `${30 + i * 10}px`;
-    style.height = `${30 + i * 10}px`;
-    style.marginRight = '10px';
-    style.marginBottom = '10px';
+    const div = document.createElement('div');
+    div.setAttribute('style', `
+      background-color: ${getRandomHexColor()};
+      width: ${30 + i * 10}px;
+      height: ${30 + i * 10}px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    `);
+    boxesContainer.appendChild(div);
   }
 }
 
