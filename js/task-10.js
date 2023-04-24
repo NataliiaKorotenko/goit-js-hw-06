@@ -36,6 +36,6 @@ const createBoxes = (amount) => {
   boxesContainer.append(...divs);
 };
 
-const destroyBoxes = () => {
+function destroyBoxes() {
   boxesContainer.textContent = '';
 };
