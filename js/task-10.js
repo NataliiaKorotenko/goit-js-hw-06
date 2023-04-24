@@ -21,6 +21,8 @@ const createBoxes = (amount) => {
 
   boxesContainer.textContent = '';
 
+  const divs = []; 
+
   for (let i = 0; i < amount; i++) {
     const div = document.createElement('div');
     div.classList.add('box');
@@ -29,8 +31,10 @@ const createBoxes = (amount) => {
     div.style.height = `${30 + i * 10}px`;
     div.style.marginRight = '10px';
     div.style.marginBottom = '10px';
-    boxesContainer.appendChild(div);
+    divs.push(div); 
   }
+
+  boxesContainer.append(...divs); 
 }
 
 const destroyBoxes = () => {
