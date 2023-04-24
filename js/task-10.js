@@ -4,16 +4,15 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const inputAmount = document.getElementById('inputAmount');
-const btnCreate = document.getElementById('btnCreate');
-const btnDestroy = document.getElementById('btnDestroy');
+const inputAmount = document.querySelector('input[type="number"]');
+const btnCreate = document.querySelector('[data-create]');
+const btnDestroy = document.querySelector('[data-destroy]');
 const boxesContainer = document.getElementById('boxes');
 
 btnCreate.addEventListener('click', () => createBoxes(inputAmount.value));
 btnDestroy.addEventListener('click', destroyBoxes);
 
 const createBoxes = (amount) => {
-
   if (isNaN(amount) || amount < 1 || amount > 100) {
     alert('Введіть коректне число від 1 до 100');
     return;
@@ -35,9 +34,8 @@ const createBoxes = (amount) => {
   }
 
   boxesContainer.append(...divs);
-}
+};
 
 const destroyBoxes = () => {
-
   boxesContainer.textContent = '';
 };
