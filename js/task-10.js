@@ -9,6 +9,10 @@ const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
 const boxesContainer = document.getElementById('boxes');
 
+function destroyBoxes() {
+  boxesContainer.textContent = '';
+};
+
 btnCreate.addEventListener('click', () => createBoxes(inputAmount.value));
 btnDestroy.addEventListener('click', destroyBoxes);
 
@@ -34,8 +38,4 @@ const createBoxes = (amount) => {
   }
 
   boxesContainer.append(...divs);
-};
-
-function destroyBoxes() {
-  boxesContainer.textContent = '';
 };
