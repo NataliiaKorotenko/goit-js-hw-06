@@ -9,7 +9,11 @@ const btnCreate = document.getElementById('btnCreate');
 const btnDestroy = document.getElementById('btnDestroy');
 const boxesContainer = document.getElementById('boxes');
 
-btnCreate.addEventListener('click', () => createBoxes(inputAmount.value));
+btnCreate.addEventListener('click', createBoxesWrapper);
+
+function createBoxesWrapper() {
+  createBoxes(inputAmount.value);
+}
 btnDestroy.addEventListener('click', destroyBoxes);
 
 const createBoxes = (amount) => {
