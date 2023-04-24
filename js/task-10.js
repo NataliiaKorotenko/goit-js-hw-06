@@ -9,11 +9,7 @@ const btnCreate = document.getElementById('btnCreate');
 const btnDestroy = document.getElementById('btnDestroy');
 const boxesContainer = document.getElementById('boxes');
 
-btnCreate.addEventListener('click', createBoxesWrapper);
-
-function createBoxesWrapper() {
-  createBoxes(inputAmount.value);
-}
+btnCreate.addEventListener('click', () => createBoxes(inputAmount.value));
 btnDestroy.addEventListener('click', destroyBoxes);
 
 const createBoxes = (amount) => {
@@ -25,7 +21,7 @@ const createBoxes = (amount) => {
 
   boxesContainer.textContent = '';
 
-  const divs = []; 
+  const divs = [];
 
   for (let i = 0; i < amount; i++) {
     const div = document.createElement('div');
@@ -35,10 +31,10 @@ const createBoxes = (amount) => {
     div.style.height = `${30 + i * 10}px`;
     div.style.marginRight = '10px';
     div.style.marginBottom = '10px';
-    divs.push(div); 
+    divs.push(div);
   }
 
-  boxesContainer.append(...divs); 
+  boxesContainer.append(...divs);
 }
 
 const destroyBoxes = () => {
